@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Create Account</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <style>
+      body {
+        background-color: #f0f2f5;
+      }
+      .facebook-logo {
+        color: #1877f2;
+        font-weight: bold;
+        font-size: 3rem;
+      }
+      .card {
+        border: none;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        max-width: 385px;
+        width: 100%;
+      }
+      .btn-signup {
+        background-color: #42b72a;
+        color: white;
+        font-weight: bold;
+      }
+      .btn-signup:hover {
+        background-color: #36a420;
+      }
+      .container {
+        padding-bottom: 60px;
+      }
+      .error {
+        border: 1.5px solid red !important;
+      }
+      .error-message {
+        color: white;
+        background-color: #cc0000;
+        padding: 6px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        margin-top: 4px;
+        max-width: 300px;
+        position: relative;
+      }
+      .error-message::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        transform: translateY(-50%);
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent #cc0000 transparent transparent;
+      }
+      .abu {
+        color: darkgrey;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #0044cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container d-flex flex-column align-items-center justify-content-center min-vh-100"
+    >
+      <h1 class="facebook-logo mb-4">facebook</h1>
+
+      <div class="card p-4">
+        <h4 class="text-center">Create a new account</h4>
+        <p class="text-center text-muted mb-3">It's quick and easy.</p>
+
+        <form id="signupForm" novalidate>
+          <div class="row g-2 mb-2">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="First name"
+                id="firstName"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Surname"
+                id="surname"
+              />
+            </div>
+          </div>
+          <label class="form-label">Date of birth</label>
+          <div class="row g-2 mb-3">
+            <div class="col">
+              <select class="form-select" id="birthDay">
+                ${[...Array(31).keys()].map(i => `
+                <option>${i+1}</option>
+                `).join('')}
+              </select>
+            </div>
+            <div class="col">
+              <select class="form-select" id="birthMonth">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+            <div class="col">
+              <select class="form-select" id="birthYear">
+                ${Array.from({length: 2025-1905+1}, (_, i) => `
+                <option>${2025-i}</option>
+                `).join('')}
+              </select>
+            </div>
+          </div>
+          <label class="form-label">Gender</label>
+          <div class="row g-2 mb-3" id="genderGroup">
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  value="female"
+                />
+                <label class="form-check-label" for="female">Female</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  value="male"
+                />
+                <label class="form-check-label" for="male">Male</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="custom"
+                  value="custom"
+                />
+                <label class="form-check-label" for="custom">Custom</label>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Mobile number or email address"
+              id="contact"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="New password"
+              id="password"
+            />
+          </div>
+          <div class="small text-muted mb-3">
+            People who use our service may have uploaded your contact
+            information to Facebook.
+            <a href="#" class="abu">Learn more.</a>
+          </div>
+          <div class="small text-muted mb-3">
+            By clicking Sign Up, you agree to our
+            <a href="#" class="abu">Terms</a>,
+            <a href="#" class="abu">Privacy Policy</a> and
+            <a href="#" class="abu">Cookies Policy</a>. You may receive SMS
+            notifications from us and can opt out at any time.
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-signup">Sign Up</button>
+          </div>
+          <p class="text-center mt-3">
+            <a href="Utama.html">Already have an account?</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const daySelect = document.getElementById("birthDay");
+        const yearSelect = document.getElementById("birthYear");
+        daySelect.innerHTML = "";
+        for (let i = 1; i <= 31; i++) {
+          const option = document.createElement("option");
+          option.value = i;
+          option.text = i;
+          daySelect.appendChild(option);
+        }
+
+        yearSelect.innerHTML = "";
+        const currentYear = new Date().getFullYear();
+        for (let y = currentYear; y >= 1905; y--) {
+          const option = document.createElement("option");
+          option.value = y;
+          option.text = y;
+          yearSelect.appendChild(option);
+        }
+      });
+
+      const form = document.getElementById("signupForm");
+
+      function showError(input, message) {
+        clearError(input);
+        input.classList.add("error");
+        const error = document.createElement("div");
+        error.className = "error-message";
+        error.innerText = message;
+        input.parentElement.appendChild(error);
+      }
+
+      function clearError(input) {
+        input.classList.remove("error");
+        const parent = input.parentElement;
+        const error = parent.querySelector(".error-message");
+        if (error) parent.removeChild(error);
+      }
+
+      function isGenderSelected() {
+        return [...document.querySelectorAll('input[name="gender"]')].some(
+          (r) => r.checked
+        );
+      }
+
+      function isValidContact(value) {
+        const emailRegex = /\S+@\S+\.\S+/;
+        const phoneRegex = /^[0-9]{6,15}$/;
+        return emailRegex.test(value) || phoneRegex.test(value);
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const firstName = document.getElementById("firstName");
+        const surname = document.getElementById("surname");
+        const birthDay = document.getElementById("birthDay");
+        const birthMonth = document.getElementById("birthMonth");
+        const birthYear = document.getElementById("birthYear");
+        const contact = document.getElementById("contact");
+        const password = document.getElementById("password");
+        const genderGroup = document.getElementById("genderGroup");
+
+        [
+          firstName,
+          surname,
+          birthDay,
+          birthMonth,
+          birthYear,
+          contact,
+          password,
+        ].forEach(clearError);
+        document
+          .querySelectorAll('input[name="gender"]')
+          .forEach((g) => g.classList.remove("error"));
+        const genderError = genderGroup.querySelector(".error-message");
+        if (genderError) genderError.remove();
+
+        let valid = true;
+
+        if (!firstName.value.trim()) {
+          showError(firstName, "Please enter your first name.");
+          valid = false;
+        }
+
+        if (!surname.value.trim()) {
+          showError(surname, "Please enter your surname.");
+          valid = false;
+        }
+
+        const year = parseInt(birthYear.value);
+        const currentYear = new Date().getFullYear();
+        if (year > currentYear) {
+          showError(
+            birthYear,
+            "Please make sure that you use your real date of birth."
+          );
+          valid = false;
+        }
+
+        if (!isGenderSelected()) {
+          const error = document.createElement("div");
+          error.className = "error-message";
+          error.innerText = "Please select your gender.";
+          genderGroup.appendChild(error);
+          valid = false;
+        }
+
+        if (!contact.value.trim() || !isValidContact(contact.value.trim())) {
+          showError(
+            contact,
+            "Please enter a valid mobile number or email address."
+          );
+          valid = false;
+        }
+
+        if (!password.value.trim()) {
+          showError(password, "Please enter your password.");
+          valid = false;
+        }
+
+        if (valid) {
+          alert("Login success");
+          form.submit();
+        }
+      });
+    </script>
+  </body>
+</html>
