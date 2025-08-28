@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Tokopakedi </title>
+
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+  <style>
+    body{
+     font-family: Arial, sans-serif;
+    }
+    .btn-ssd-selected {
+      background-color: #198754;
+      color: #fff;
+    }
+    .btn-ssd-unselected {
+      background-color: #f8f9fa;
+      color: #198754;
+      border: 1px solid #198754;
+    }
+    .thumbnail-img.active {
+      border: 2px solid #198754;
+    }
+    .btn-quantity {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      text-align: center;
+    }
+    hr{
+        color: black;
+    }
+.footer-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 1.5em;
+}
+
+.footer-marquee span {
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  animation: scroll-left 20s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+.wave-text span {
+  display: inline-block;
+  animation: wave 1.5s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); 
+  }
+}
+
+.wave-text span:nth-child(1) { animation-delay: 0s; }
+.wave-text span:nth-child(2) { animation-delay: 0.1s; }
+.wave-text span:nth-child(3) { animation-delay: 0.2s; }
+.wave-text span:nth-child(4) { animation-delay: 0.3s; }
+.wave-text span:nth-child(5) { animation-delay: 0.4s; }
+.wave-text span:nth-child(6) { animation-delay: 0.5s; }
+.wave-text span:nth-child(7) { animation-delay: 0.6s; }
+.wave-text span:nth-child(8) { animation-delay: 0.7s; }
+.wave-text span:nth-child(9) { animation-delay: 0.8s; }
+.wave-text span:nth-child(10){ animation-delay: 0.9s; }
+
+</style>
+
+  </style>
+</head>
+<body class="bg-white">
+  <header class="d-flex align-items-center justify-content-between border-bottom px-3 bg-light" style="height:56px;">
+    <div class="d-flex align-items-center gap-2 ms-5">
+      <img height="32" width="32" src="assets/img/logo.png"/>
+      <span class="wave-text fw-bold text-success fs-5 user-select-none">
+  <span>t</span><span>o</span><span>k</span><span>o</span><span>p</span><span>a</span><span>k</span><span>e</span><span>d</span><span>i</span>
+</span>
+
+    </div>
+    <nav class="d-flex align-items-center gap-3 flex-grow-1 mx-3" style="max-width: 600px;">
+      <a class="text-success fw-semibold small user-select-none" style="text-decoration: none;" href="#">Kategori</a>
+      <input aria-label="Search in tokopakedi" class="form-control form-control-sm flex-grow-1" placeholder="Cari di tokopakedi" type="search"/>
+    </nav>
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn btn-outline-success btn-sm px-3 fw-semibold" type="button">Masuk</button>
+      <button class="btn btn-success btn-sm px-3 fw-semibold" type="button">Daftar</button>
+    </div>
+  </header>
+  <div class="bg-light ms-5 me-5 mt-3 px-3 py-1 rounded">
+  <main class="container my-4 me-2">
+    <nav  style="font-size:smaller;" aria-label="breadcrumb" class="mb-3 user-select-none">
+      <ol class="breadcrumb small text-secondary mb-0 text-smaller">
+        <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item">Komputer & LaptopLaptop </li>
+        <li class="breadcrumb-item">Ultrabook</li>
+        <li class="breadcrumb-item active fst-italic text-success fw-semibold" aria-current="page">
+          Asus Zenbook Pro DUO UX482 Touch i7 1165G7 14.0 FHD 8GB 512GB ssd W10 - 
+        </li>
+      </ol>
+      <p class="breadcrumb-item active fst-italic text-success fw-semibold" aria-current="page">
+         SSD 1TB, 8 gb
+        </p>
+    </nav>
+
+    <div class="row gx-4">
+      <section class="col-12 col-lg-4 d-flex flex-column gap-3">
+        <img id="mainImage" class="border w-100" height="320" alt="Main product image"/>
+        <div class="d-flex gap-3">
+          <img class="thumbnail-img border active" height="80" width="100" src="assets/img/laptop1.jpg"/>
+          <img class="thumbnail-img border" height="80" width="100" src="assets/img/laptop2.jpg"/>
+          <img class="thumbnail-img border" height="80" width="100" src="assets/img/laptop3.jpg"/>
+        </div>
+      </section>
+      <section class="col-12 col-lg-5 pe-lg-4 ">
+        <h2 class="fw-semibold text-dark small lh-sm">
+          Asus Zenbook Pro DUO UX482 Touch i7 1165G7 14.0 FHD
+        </h2>
+        <p class="text-secondary small mt-1 mb-0">
+          Terjual 10 <span class="text-warning">⭐</span> <span class="text-secondary">(4 Rating)</span>
+        </p>
+        <p class="fw-bold fs-3 mt-1 mb-4">Rp 19.000.000</p>
+        <hr/>
+        <div class="mb-4">
+          <p class="small fw-semibold mb-1">Pilih Ukuran :</p>
+          <div class="btn-group" role="group" aria-label="Pilih Ukuran SSD">
+            <button id="ssd1tbBtn" class="btn btn-ssd-selected">SSD 1 TB</button>
+            <button id="ssd512gbBtn" class="btn btn-ssd-unselected">SSD 512 GB</button>
+          </div>
+        </div>
+        <hr>
+        <div class="small text-secondary lh-sm me-2">
+          <p class="mb-1">
+            Etalase: ASUS NB SLiM / SEMi SLiM Laptop<br/>
+            <span class="fw-semibold text-dark">ASUS ZENBOOK DUO TOUCH UX482EA i7 1165G7</span>
+          </p>
+          <p class="mb-1">
+            Intel Evo Platform<br/>
+            Intel Core i7-1165G7,<br/>
+            14” FHD NanoEdge Touch Display,<br/>
+            Intel Iris Xe Graphics<br/>
+            8GB / 16GB RAM DDR4,<br/>
+            512GB / 1TB PCIe SSD,<br/>
+            Windows 10 upgrade ke Windows 11
+          </p>
+          <p class="mb-1">
+            <span class="fw-semibold text-dark">Kelengkapan :</span><br/>
+            Unit, Charger, Dus, Tas Laptop
+          </p>
+          <p class="text-warning fw-bold mb-1">NEW 100% Original</p>
+          <p>Garansi Distributor 1 Tahun</p>
+        </div>
+      </section>
+
+      <section style="border: black; width: 30pxx;" class="col-12 col-lg-3 border rounded p-3 d-flex flex-column justify-content-between bg-white">
+        <div>
+          <p class="small fw-semibold mb-1">Atur jumlah dan catatan</p>
+          <h3 class="fw-bold fs-5 mb-4">SSD 1 TB, 8 GB</h3>
+          <div style="margin-left: 20px;" class="d-flex align-items-center gap-3 mb-2">
+            <button class="btn btn-quantity decrease" style="text-decoration: none;" type="button">-</button>
+            <input style="width: 90px;" id="quantityInput" type="number" min="1" value="1" class="form-control form-control-sm text-center" aria-label="Quantity input"/>
+            <button class="btn btn-quantity increase" style="text-decoration: none;" type="button">+</button>
+          </div>
+          <p class="small mb-2">Stok : <span class="text-warning fw-semibold">Sisa 10</span></p>
+          <p class="small mb-4">Subtotal : <span class="fw-bold text-success">Rp 19.000.000</span></p>
+          <hr/>
+                  <div class="d-flex gap-2">
+           <button style="border-radius: 5px; border-color: rgb(11, 163, 11); background-color: white; text-decoration: none; color:  rgb(11, 163, 11);" type="button" onclick="alert('silahkan masuk terlebih dahulu')">Beli Langsung</button>
+          <button style=" border-radius: 5px; color: white; background-color: green; border: none;  margin-left: 6px; padding-left: 10px; padding-right: 10px;" onclick="alert('silahkan masuk terlebih dahulu')" type="button">+ Keranjang</button>
+                </div>
+        </div>
+
+      </section>
+    </div>
+    </div>
+  </main>
+<div class="bg-white ms-5 me-5 mb-3 px-3 py-2">
+</div>
+ <footer class="bg-success text-white text-center py-2 small user-select-none">
+  <div class="footer-marquee">
+    <span>Selamat Berbelanja, happy shop! © Fahri ananda - 2025</span>
+  </div>
+</footer>
+
+
+  <script src="javascript/jquery.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const mainImage = document.getElementById("mainImage");
+    const thumbnails = document.querySelectorAll(".thumbnail-img");
+
+    if (thumbnails.length > 0) {
+      mainImage.src = thumbnails[0].src;
+    }
+
+    thumbnails.forEach((thumb) => {
+      thumb.addEventListener("click", function () {
+        mainImage.src = this.src;
+        thumbnails.forEach((img) => img.classList.remove("active"));
+        this.classList.add("active");
+      });
+    });
+
+    const ssd1tbBtn = document.getElementById("ssd1tbBtn");
+    const ssd512gbBtn = document.getElementById("ssd512gbBtn");
+    const productTitle = document.querySelector("h3.fw-bold");
+    const priceDisplay = document.querySelector(".fs-3");
+    const subtotalEl = document.querySelector("p.mb-4 span");
+
+    const quantityInput = document.getElementById("quantityInput");
+
+    const prices = {
+      "1tb": 19000000,
+      "512gb": 15000000
+    };
+
+    const MAX_STOCK = 10;
+    let selectedSSD = "1tb";
+
+    function updateSSDSelection(selectedBtn, otherBtn, label, ssdKey) {
+      selectedBtn.classList.remove("btn-ssd-unselected");
+      selectedBtn.classList.add("btn-ssd-selected");
+      otherBtn.classList.remove("btn-ssd-selected");
+      otherBtn.classList.add("btn-ssd-unselected");
+      productTitle.textContent = label;
+      selectedSSD = ssdKey;
+      updatePrice();
+      updateSubtotal();
+    }
+
+    function updatePrice() {
+      priceDisplay.textContent = "Rp " + prices[selectedSSD].toLocaleString("id-ID");
+    }
+
+    ssd1tbBtn.addEventListener("click", function () {
+      updateSSDSelection(ssd1tbBtn, ssd512gbBtn, "SSD 1 TB, 8 GB", "1tb");
+    });
+
+    ssd512gbBtn.addEventListener("click", function () {
+      updateSSDSelection(ssd512gbBtn, ssd1tbBtn, "SSD 512 GB, 8 GB", "512gb");
+    });
+
+    const decreaseBtn = document.querySelector(".decrease");
+    const increaseBtn = document.querySelector(".increase");
+
+    function updateSubtotal() {
+      let qty = parseInt(quantityInput.value);
+      if (isNaN(qty) || qty < 1) qty = 1;
+      if (qty > MAX_STOCK) qty = MAX_STOCK;
+      quantityInput.value = qty;
+      const total = qty * prices[selectedSSD];
+      subtotalEl.textContent = "Rp " + total.toLocaleString("id-ID");
+    }
+
+    increaseBtn.addEventListener("click", function () {
+      let current = parseInt(quantityInput.value);
+      if (current < MAX_STOCK) {
+        quantityInput.value = current + 1;
+        updateSubtotal();
+      }
+    });
+
+    decreaseBtn.addEventListener("click", function () {
+      const current = parseInt(quantityInput.value);
+      if (current > 1) {
+        quantityInput.value = current - 1;
+        updateSubtotal();
+      }
+    });
+
+    quantityInput.addEventListener("input", function () {
+      let val = parseInt(this.value);
+      if (isNaN(val) || val < 1) {
+        this.value = 1;
+      } else if (val > MAX_STOCK) {
+        this.value = MAX_STOCK;
+      }
+      updateSubtotal();
+    });
+
+    updatePrice();
+    updateSubtotal();
+  });
+</script>
+</body>
+</html>
